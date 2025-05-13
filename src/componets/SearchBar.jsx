@@ -1,30 +1,32 @@
-import {useState} from "react"
-import "./SearchBar.css"
 
-const SearchBar = ({onSubmit}) => {
-    const [term, setTerm] = useState ("")
+import { useState } from "react";
+import "./SearchBar.css";
 
-    const handleFormSubmit = (event ) => {
-        event.preventDefault()
-        console.log("Necesito decirle al componente papa sobre los datos ")
-        onSubmit(term)
-    }
+function SearchBar({ onSubmit }) {
+    const [term, setTerm] = useState("");
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(term);
+    };
 
     const handleChange = (event) => {
-         setTerm(event.target.value)
-    }
-
-    console.log("term", term)
+        setTerm(event.target.value);
+    };
 
     return (
         <div className="search-bar">
             <form onSubmit={handleFormSubmit}>
-            <label> Termino de la busqueda : </label>
-            <input onChange={handleChange} value={term}/>
-        </form>
+                <label>Término de la búsqueda:</label>
+                <input
+                    type="text"
+                    value={term}
+                    onChange={handleChange}
+                    placeholder="Escribe algo..."
+                />
+            </form>
         </div>
-    )
-    
+    );
 }
 
-export default SearchBar
+export default SearchBar;

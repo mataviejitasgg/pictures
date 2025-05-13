@@ -9,7 +9,7 @@ async function searchImages(term) {
     });
 
     console.log(response);
-    return response.daa.results;
+    return response.data.results;
 }
 
 export default searchImages

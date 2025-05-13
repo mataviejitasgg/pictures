@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './componets/SearchBar'
-import viteLogo from "/componets/ImageList"
+import viteLogo from "./componets/ImageList"
 import './api'
 import searchImages from './api'
 
